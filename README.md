@@ -1,3 +1,5 @@
+### Termos e acordos
+
 Ao iniciar este projeto, você concorda com as diretrizes do Código de Ética e Conduta e do Manual da Pessoa Estudante da Trybe.
 
 ---
@@ -10,7 +12,33 @@ Aqui você vai encontrar os detalhes de como estruturar o desenvolvimento do seu
 
 ---
 
-## Habilidades
+# Sumário
+
+- [Habilidades](#habilidades)
+- [Entregáveis](#entregáveis)
+  - [O que deverá ser desenvolvido](#o-que-deverá-ser-desenvolvido)
+  - [Desenvolvimento](#desenvolvimento)
+  - [Data de entrega](#data-de-entrega)
+- [Instruções para entregar seu projeto](#instruções-para-entregar-seu-projeto)
+  - [Antes de começar a desenvolver](#antes-de-começar-a-desenvolver)
+  - [Durante o desenvolvimento](#durante-o-desenvolvimento)
+  - [Depois de terminar o desenvolvimento (opcional)](#depois-de-terminar-o-desenvolvimento-opcional)
+- [Como desenvolver](#como-desenvolver)
+- [Requisitos do projeto](#requisitos-do-projeto)
+  - [Linter](#linter)
+  - [Lista de requisitos](#lista-de-requisitos)
+    - [1 - Crie o endpoint POST /login](#1---crie-o-endpoint-post-login)
+    - [2 - Crie o endpoint POST /crush](#2---Crie-o-endpoint-POST-crush)
+    - [3 - Crie o endpoint GET /crush](#3---Crie-o-endpoint-GET-crush)
+    - [4 - Crie o endpoint GET /crush/:id](#4---Crie-o-endpoint-GET-crush:id)
+    - [5 - Crie o endpoint PUT /crush/:id](#5---Crie-o-endpoint-PUT-crush:id)
+    - [6 - Crie o endpoint DELETE /crush/:id](#6---Crie-o-endpoint-DELETE-crush:id)
+    - [7 - Crie o endpoint GET /crush/search?q=searchTerm](#7---Crie-o-endpoint-GET-crushsearch?q=searchTerm)
+- [Avisos Finais](#avisos-finais)
+
+---
+
+# Habilidades
 
 Neste projeto, verificamos se você é capaz de:
 
@@ -20,27 +48,27 @@ Neste projeto, verificamos se você é capaz de:
 
 ---
 
-## Entregáveis
+# Entregáveis
 
 Para entregar o seu projeto você deverá criar um Pull Request neste repositório.
 
 Lembre-se que você pode consultar nosso conteúdo sobre [Git & GitHub](https://course.betrybe.com/intro/git/) sempre que precisar!
 
-### O que deverá ser desenvolvido
+## O que deverá ser desenvolvido
 
 Você vai desenvolver uma API de um CRUD (**C**reate, **R**ead, **U**pdate e **D**elete) de crushs. Você vai desenvolver alguns endpoints que irão ler e escrever em um arquivo, isso utilizando o módulo `fs`.
 
-### Desenvolvimento
+## Desenvolvimento
 
-#### Data de Entrega
+### Data de Entrega
 
 O projeto tem até a seguinte data: `dd/mm/yyyy - 14:00h`. Para ser entregue a avaliação final.
 
 ---
 
-## Instruções para entregar seu projeto
+# Instruções para entregar seu projeto
 
-### ANTES DE COMEÇAR A DESENVOLVER:
+## Antes de começar a desenvolver
 
 1. Clone o repositório
 
@@ -89,7 +117,7 @@ O projeto tem até a seguinte data: `dd/mm/yyyy - 14:00h`. Para ser entregue a a
 - **Não se preocupe em preencher mais nada por enquanto!**
 - Volte até a [página de _Pull Requests_ do repositório](https://github.com/tryber/sd-0x-project-crush-manager/pulls) e confira que o seu _Pull Request_ está criado
 
-### DURANTE O DESENVOLVIMENTO:
+## Durante o desenvolvimento
 
 - Faça `commits` das alterações que você fizer no código regularmente
 
@@ -102,7 +130,7 @@ O projeto tem até a seguinte data: `dd/mm/yyyy - 14:00h`. Para ser entregue a a
   4. `git push -u nome-da-branch` _(para enviar o commit para o repositório remoto na primeira vez que fizer o `push` de uma nova branch)_
   5. `git push` _(para enviar o commit para o repositório remoto após o passo anterior)_
 
-### DEPOIS DE TERMINAR O DESENVOLVIMENTO (OPCIONAL):
+## Depois de terminar o desenvolvimento (opcional):
 
 Para sinalizar que o seu projeto está pronto para o _"Code Review"_ dos seus colegas, faça o seguinte:
 
@@ -116,9 +144,19 @@ Para sinalizar que o seu projeto está pronto para o _"Code Review"_ dos seus co
 
 Caso tenha alguma dúvida, [aqui tem um video explicativo](https://vimeo.com/362189205).
 
-### REVISANDO UM PULL REQUEST
+### Revisando um pull request
 
 Use o conteúdo sobre [Code Review](https://course.betrybe.com/real-life-engineer/code-review/) para te ajudar a revisar os _Pull Requests_.
+
+## Avaliando o projeto
+
+Ao finalizar e submeter o projeto, não se esqueça de avaliar sua experiência preenchendo o formulário. Leva menos de 3 minutos!
+
+Link: [Formulário Avaliação Projeto](https://be-trybe.typeform.com/to/ZTeR4IbH#cohort_name=xxxxx)
+
+---
+
+# Como desenvolver:
 
 ## Sobre o avaliador
 
@@ -126,7 +164,22 @@ O avaliador automático não necessariamente avalia seu projeto na ordem em que 
 
 ---
 
-## Requisitos
+# Requisitos do projeto
+
+### Linter
+
+Usaremos o [ESLint](https://eslint.org/) para fazer a análise estática do seu código.
+
+Este projeto já vem com as dependências relacionadas ao _linter_ configuradas nos arquivos `package.json`.
+
+Para poder rodar os `ESLint` em um projeto basta executar o comando `npm install` dentro do projeto e depois `npm run lint`. Se a análise do `ESLint` encontrar problemas no seu código, tais problemas serão mostrados no seu terminal. Se não houver problema no seu código, nada será impresso no seu terminal.
+
+Devido ao fato de as configurações das regras do `ESLint` dos projetos de front e back **serem diferentes**, **é preciso executar o `ESLint` em cada projeto**.
+
+Você pode também instalar o plugin do `ESLint` no `VSCode`, bastar ir em extensions e baixar o [plugin `ESLint`](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint).
+
+---
+## Lista de requisitos
 
 ### 1 - Crie o endpoint POST `/login`
 
@@ -592,8 +645,10 @@ O avaliador automático não necessariamente avalia seu projeto na ordem em que 
 
 ---
 
-## Avaliando o projeto
+# Avisos finais
 
 Ao finalizar e submeter o projeto, não se esqueça de avaliar sua experiência preenchendo o formulário. Leva menos de 3 minutos!
 
-Link: [Formulário Avaliação Projeto](https://be-trybe.typeform.com/to/ZTeR4IbH#cohort_name=xxxxx)
+Link: [FORMULÁRIO DE AVALIAÇÃO DE PROJETO](https://be-trybe.typeform.com/to/ZTeR4IbH)
+
+O avaliador automático não necessariamente avalia seu projeto na ordem em que os requisitos aparecem no readme. Isso acontece para deixar o processo de avaliação mais rápido. Então, não se assuste se isso acontecer, ok?
