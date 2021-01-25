@@ -124,6 +124,11 @@ Use o conteúdo sobre [Code Review](https://course.betrybe.com/real-life-enginee
 
 O avaliador automático não necessariamente avalia seu projeto na ordem em que os requisitos aparecem no readme. Isso acontece para deixar o processo de avaliação mais rápido. Então, não se assuste se isso acontecer, ok?
 
+## Observações
+
+1. Com excessão do requisito 1, todos os outros requisitos deverão ser feitos utilizando o módulo `fs`.
+
+2. O arquivo `crush.json` será utilizado como base para fazer as requisições da API.
 ---
 
 ## Requisitos
@@ -187,7 +192,98 @@ O avaliador automático não necessariamente avalia seu projeto na ordem em que 
     }
     ```
 
-### 2 - Crie o endpoint POST `/crush`
+### 2 - Crie o endpoint GET `/crush`
+
+#### Os seguintes pontos serão avaliados:
+
+- O endpoint deve retornar um array com todos os crushs cadastrados. Devendo retornar o `status 200`, com o seguinte corpo:
+
+  ```js
+  [
+    {
+      id: 1,
+      name: "Keanu Reeves",
+      age: 56,
+      date: {
+        datedAt: "22/10/2019",
+        rate: 5,
+      },
+    },
+    {
+      id: 2,
+      name: "Madonna",
+      age: 62,
+      date: {
+        datedAt: "10/09/2019",
+        rate: 5,
+      },
+    },
+  ];
+  ```
+
+- Caso não exista nenhum crush cadastrado o endpoint deve retornar um array vazio e o `status 200`.
+
+- A requisição deve ter o token de autenticação nos headers.
+
+  - Caso o token não seja encontrado retorne um código de `status 401`, com o seguinte corpo:
+
+    ```js
+    {
+      "message": "Token não encontrado"
+    }
+    ```
+
+  - Caso o token seja inválido retorne um código de `status 401`, com o seguinte corpo:
+
+    ```js
+    {
+      "message": "Token inválido"
+    }
+    ```
+
+### 3 - Crie o endpoint GET `/crush/:id`
+
+- O endpoint deve retornar um crush baseado no id da rota. Devendo retornar o `status 200`, com o seguinte corpo:
+
+  ```js
+  {
+    id: 1,
+    name: "Keanu Reeves",
+    age: 56,
+    date: {
+      datedAt: "22/10/2019",
+      rate: 5,
+    },
+  }
+  ```
+
+- Caso não seja encontrado um crush baseado no id da rota, o endpoint deve retornar o `status 404` com o seguinte corpo:
+
+  ```js
+  {
+    "message": "Crush não encontrado"
+  }
+  ```
+
+- A requisição deve ter o token de autenticação nos headers.
+
+  - Caso o token não seja encontrado retorne um código de `status 401`, com o seguinte corpo:
+
+    ```js
+    {
+      "message": "Token não encontrado"
+    }
+    ```
+
+  - Caso o token seja inválido retorne um código de `status 401`, com o seguinte corpo:
+
+    ```js
+    {
+      "message": "Token inválido"
+    }
+    ```
+
+### 4 - Crie o endpoint POST `/crush`
 
 #### Os seguintes pontos serão avaliados:
 
@@ -305,97 +401,6 @@ O avaliador automático não necessariamente avalia seu projeto na ordem em que 
     }
   }
   ```
-
-### 3 - Crie o endpoint GET `/crush`
-
-#### Os seguintes pontos serão avaliados:
-
-- O endpoint deve retornar um array com todos os crushs cadastrados. Devendo retornar o `status 200`, com o seguinte corpo:
-
-  ```js
-  [
-    {
-      id: 1,
-      name: "Keanu Reeves",
-      age: 56,
-      date: {
-        datedAt: "22/10/2019",
-        rate: 5,
-      },
-    },
-    {
-      id: 2,
-      name: "Madonna",
-      age: 62,
-      date: {
-        datedAt: "10/09/2019",
-        rate: 5,
-      },
-    },
-  ];
-  ```
-
-- Caso não exista nenhum crush cadastrado o endpoint deve retornar um array vazio e o `status 200`.
-
-- A requisição deve ter o token de autenticação nos headers.
-
-  - Caso o token não seja encontrado retorne um código de `status 401`, com o seguinte corpo:
-
-    ```js
-    {
-      "message": "Token não encontrado"
-    }
-    ```
-
-  - Caso o token seja inválido retorne um código de `status 401`, com o seguinte corpo:
-
-    ```js
-    {
-      "message": "Token inválido"
-    }
-    ```
-
-### 4 - Crie o endpoint GET `/crush/:id`
-
-- O endpoint deve retornar um crush baseado no id da rota. Devendo retornar o `status 200`, com o seguinte corpo:
-
-  ```js
-  {
-    id: 1,
-    name: "Keanu Reeves",
-    age: 56,
-    date: {
-      datedAt: "22/10/2019",
-      rate: 5,
-    },
-  }
-  ```
-
-- Caso não seja encontrado um crush baseado no id da rota, o endpoint deve retornar o `status 404` com o seguinte corpo:
-
-  ```js
-  {
-    "message": "Crush não encontrado"
-  }
-  ```
-
-- A requisição deve ter o token de autenticação nos headers.
-
-  - Caso o token não seja encontrado retorne um código de `status 401`, com o seguinte corpo:
-
-    ```js
-    {
-      "message": "Token não encontrado"
-    }
-    ```
-
-  - Caso o token seja inválido retorne um código de `status 401`, com o seguinte corpo:
-
-    ```js
-    {
-      "message": "Token inválido"
-    }
-    ```
 
 ### 5 - Crie o endpoint PUT `/crush/:id`
 
