@@ -1,3 +1,5 @@
+### Termos e acordos
+
 Ao iniciar este projeto, você concorda com as diretrizes do Código de Ética e Conduta e do Manual da Pessoa Estudante da Trybe.
 
 ---
@@ -10,37 +12,72 @@ Aqui você vai encontrar os detalhes de como estruturar o desenvolvimento do seu
 
 ---
 
-## Habilidades
+# Sumário
 
-Neste projeto, verificamos se você é capaz de:
-
-- Escrever APIs utilizando Node e Express;
-- Criar rotas;
-- Aplicar middlewares.
+- [Habilidades](#habilidades)
+- [Entregáveis](#entregáveis)
+  - [O que deverá ser desenvolvido](#o-que-deverá-ser-desenvolvido)
+  - [Desenvolvimento](#desenvolvimento)
+  - [Data de entrega](#data-de-entrega)
+- [Instruções para entregar seu projeto](#instruções-para-entregar-seu-projeto)
+  - [Antes de começar a desenvolver](#antes-de-começar-a-desenvolver)
+  - [Durante o desenvolvimento](#durante-o-desenvolvimento)
+  - [Depois de terminar o desenvolvimento (opcional)](#depois-de-terminar-o-desenvolvimento-opcional)
+- [Como desenvolver](#como-desenvolver)
+- [Requisitos do projeto](#requisitos-do-projeto)
+  - [Linter](#linter)
+  - [Lista de requisitos](#lista-de-requisitos)
+    - [1 - Crie o endpoint GET /crush](#1---crie-o-endpoint-get-crush)
+    - [2 - Crie o endpoint GET /crush/:id](#2---crie-o-endpoint-get-crushid)
+    - [3 - Crie o endpoint POST /login](#3---crie-o-endpoint-post-login)
+    - [4 - Crie o endpoint POST /crush](#4---crie-o-endpoint-post-crush)
+    - [5 - Crie o endpoint PUT /crush/:id](#5---crie-o-endpoint-put-crushid)
+    - [6 - Crie o endpoint DELETE /crush/:id](#6---crie-o-endpoint-delete-crushid)
+    - [7 - Crie o endpoint GET /crush/search?q=searchTerm](#7---crie-o-endpoint-get-crushsearchqsearchterm)
+- [Avisos Finais](#avisos-finais)
 
 ---
 
-## Entregáveis
+# Habilidades
+
+Neste projeto, verificamos se você é capaz de:
+
+- Realizar operações assíncronas utilizando callbacks;
+- Realizar operações assíncronas utilizando Promises;
+- Ler e escrever arquivos localmente com NodeJS;
+- Escrever seus próprios scripts que criam e consomem Promises;
+- Reescrever código que usa callbacks para que use Promises;
+- Realizar chamadas de funções de forma consciente;
+- Entender os conceitos básicos de como o JavaScript funciona;
+- Detectar e solucionar problemas no código de forma mais objetiva;
+- Entender a diferença entre execução síncrona e assíncrona;
+- Entender o que é o HTTP, o que é uma API e o que os dois têm a ver com o Express;
+- Escrever APIs utilizando Node e Express;
+- Entender a estrutura de uma aplicação Express e como organizar seu código;
+- Criar rotas e aplicar middlewares.
+---
+
+# Entregáveis
 
 Para entregar o seu projeto você deverá criar um Pull Request neste repositório.
 
 Lembre-se que você pode consultar nosso conteúdo sobre [Git & GitHub](https://course.betrybe.com/intro/git/) sempre que precisar!
 
-### O que deverá ser desenvolvido
+## O que deverá ser desenvolvido
 
 Você vai desenvolver uma API de um CRUD (**C**reate, **R**ead, **U**pdate e **D**elete) de crushs. Você vai desenvolver alguns endpoints que irão ler e escrever em um arquivo, isso utilizando o módulo `fs`.
 
-### Desenvolvimento
+## Desenvolvimento
 
-#### Data de Entrega
+### Data de Entrega
 
 O projeto tem até a seguinte data: `dd/mm/yyyy - 14:00h`. Para ser entregue a avaliação final.
 
 ---
 
-## Instruções para entregar seu projeto
+# Instruções para entregar seu projeto
 
-### ANTES DE COMEÇAR A DESENVOLVER:
+## Antes de começar a desenvolver:
 
 1. Clone o repositório
 
@@ -89,7 +126,7 @@ O projeto tem até a seguinte data: `dd/mm/yyyy - 14:00h`. Para ser entregue a a
 - **Não se preocupe em preencher mais nada por enquanto!**
 - Volte até a [página de _Pull Requests_ do repositório](https://github.com/tryber/sd-0x-project-crush-manager/pulls) e confira que o seu _Pull Request_ está criado
 
-### DURANTE O DESENVOLVIMENTO:
+## Durante o desenvolvimento
 
 - Faça `commits` das alterações que você fizer no código regularmente
 
@@ -102,7 +139,7 @@ O projeto tem até a seguinte data: `dd/mm/yyyy - 14:00h`. Para ser entregue a a
   4. `git push -u nome-da-branch` _(para enviar o commit para o repositório remoto na primeira vez que fizer o `push` de uma nova branch)_
   5. `git push` _(para enviar o commit para o repositório remoto após o passo anterior)_
 
-### DEPOIS DE TERMINAR O DESENVOLVIMENTO (OPCIONAL):
+## Depois de terminar o desenvolvimento (opcional):
 
 Para sinalizar que o seu projeto está pronto para o _"Code Review"_ dos seus colegas, faça o seguinte:
 
@@ -116,24 +153,99 @@ Para sinalizar que o seu projeto está pronto para o _"Code Review"_ dos seus co
 
 Caso tenha alguma dúvida, [aqui tem um video explicativo](https://vimeo.com/362189205).
 
-### REVISANDO UM PULL REQUEST
+### Revisando um pull request
 
 Use o conteúdo sobre [Code Review](https://course.betrybe.com/real-life-engineer/code-review/) para te ajudar a revisar os _Pull Requests_.
+
+---
+
+# Como desenvolver:
 
 ## Sobre o avaliador
 
 O avaliador automático não necessariamente avalia seu projeto na ordem em que os requisitos aparecem no readme. Isso acontece para deixar o processo de avaliação mais rápido. Então, não se assuste se isso acontecer, ok?
 
+# Requisitos do projeto
+
+### Linter
+
+Usaremos o [ESLint](https://eslint.org/) para fazer a análise estática do seu código.
+
+Este projeto já vem com as dependências relacionadas ao _linter_ configuradas nos arquivos `package.json`.
+
+Para poder rodar os `ESLint` em um projeto basta executar o comando `npm install` dentro do projeto e depois `npm run lint`. Se a análise do `ESLint` encontrar problemas no seu código, tais problemas serão mostrados no seu terminal. Se não houver problema no seu código, nada será impresso no seu terminal.
+
+Você pode também instalar o plugin do `ESLint` no `VSCode`, bastar ir em extensions e baixar o [plugin `ESLint`](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint).
+
+---
+
+## Lista de requisitos
+
 ## Observações
 
-1. Com excessão do requisito 1, todos os outros requisitos deverão ser feitos utilizando o módulo `fs`.
+1. Com excessão do requisito 3, todos os outros requisitos deverão ser feitos utilizando o módulo `fs`.
 
 2. O arquivo `crush.json` será utilizado como base para fazer as requisições da API.
 ---
 
-## Requisitos
 
-### 1 - Crie o endpoint POST `/login`
+### 1 - Crie o endpoint GET `/crush`
+
+#### Os seguintes pontos serão avaliados:
+
+- O endpoint deve retornar um array com todos os crushs cadastrados. Devendo retornar o `status 200`, com o seguinte corpo:
+
+  ```js
+  [
+    {
+      id: 1,
+      name: "Keanu Reeves",
+      age: 56,
+      date: {
+        datedAt: "22/10/2019",
+        rate: 5,
+      },
+    },
+    {
+      id: 2,
+      name: "Madonna",
+      age: 62,
+      date: {
+        datedAt: "10/09/2019",
+        rate: 5,
+      },
+    },
+  ];
+  ```
+
+- Caso não exista nenhum crush cadastrado o endpoint deve retornar um array vazio e o `status 200`.
+
+
+### 2 - Crie o endpoint GET `/crush/:id`
+
+- O endpoint deve retornar um crush baseado no id da rota. Devendo retornar o `status 200`, com o seguinte corpo:
+
+  ```js
+  {
+    id: 1,
+    name: "Keanu Reeves",
+    age: 56,
+    date: {
+      datedAt: "22/10/2019",
+      rate: 5,
+    },
+  }
+  ```
+
+- Caso não seja encontrado um crush baseado no id da rota, o endpoint deve retornar o `status 404` com o seguinte corpo:
+
+  ```js
+  {
+    "message": "Crush não encontrado"
+  }
+  ```
+
+### 3 - Crie o endpoint POST `/login`
 
 #### Os seguintes pontos serão avaliados:
 
@@ -192,97 +304,6 @@ O avaliador automático não necessariamente avalia seu projeto na ordem em que 
     }
     ```
 
-### 2 - Crie o endpoint GET `/crush`
-
-#### Os seguintes pontos serão avaliados:
-
-- O endpoint deve retornar um array com todos os crushs cadastrados. Devendo retornar o `status 200`, com o seguinte corpo:
-
-  ```js
-  [
-    {
-      id: 1,
-      name: "Keanu Reeves",
-      age: 56,
-      date: {
-        datedAt: "22/10/2019",
-        rate: 5,
-      },
-    },
-    {
-      id: 2,
-      name: "Madonna",
-      age: 62,
-      date: {
-        datedAt: "10/09/2019",
-        rate: 5,
-      },
-    },
-  ];
-  ```
-
-- Caso não exista nenhum crush cadastrado o endpoint deve retornar um array vazio e o `status 200`.
-
-- A requisição deve ter o token de autenticação nos headers.
-
-  - Caso o token não seja encontrado retorne um código de `status 401`, com o seguinte corpo:
-
-    ```js
-    {
-      "message": "Token não encontrado"
-    }
-    ```
-
-  - Caso o token seja inválido retorne um código de `status 401`, com o seguinte corpo:
-
-    ```js
-    {
-      "message": "Token inválido"
-    }
-    ```
-
-### 3 - Crie o endpoint GET `/crush/:id`
-
-- O endpoint deve retornar um crush baseado no id da rota. Devendo retornar o `status 200`, com o seguinte corpo:
-
-  ```js
-  {
-    id: 1,
-    name: "Keanu Reeves",
-    age: 56,
-    date: {
-      datedAt: "22/10/2019",
-      rate: 5,
-    },
-  }
-  ```
-
-- Caso não seja encontrado um crush baseado no id da rota, o endpoint deve retornar o `status 404` com o seguinte corpo:
-
-  ```js
-  {
-    "message": "Crush não encontrado"
-  }
-  ```
-
-- A requisição deve ter o token de autenticação nos headers.
-
-  - Caso o token não seja encontrado retorne um código de `status 401`, com o seguinte corpo:
-
-    ```js
-    {
-      "message": "Token não encontrado"
-    }
-    ```
-
-  - Caso o token seja inválido retorne um código de `status 401`, com o seguinte corpo:
-
-    ```js
-    {
-      "message": "Token inválido"
-    }
-    ```
-
 ### 4 - Crie o endpoint POST `/crush`
 
 #### Os seguintes pontos serão avaliados:
@@ -301,6 +322,24 @@ O avaliador automático não necessariamente avalia seu projeto na ordem em que 
     }
   }
   ```
+
+- A requisição deve ter o token de autenticação nos headers.
+
+  - Caso o token não seja encontrado retorne um código de `status 401`, com o seguinte corpo:
+
+    ```js
+    {
+      "message": "Token não encontrado"
+    }
+    ```
+
+  - Caso o token seja inválido retorne um código de `status 401`, com o seguinte corpo:
+
+    ```js
+    {
+      "message": "Token inválido"
+    }
+    ```
 
 - O campo `name` deverá ter no mínimo 3 caracteres. Ele é obrigatório.
 
@@ -370,24 +409,6 @@ O avaliador automático não necessariamente avalia seu projeto na ordem em que 
       }
       ```
 
-- A requisição deve ter o token de autenticação nos headers.
-
-  - Caso o token não seja encontrado retorne um código de `status 401`, com o seguinte corpo:
-
-    ```js
-    {
-      "message": "Token não encontrado"
-    }
-    ```
-
-  - Caso o token seja inválido retorne um código de `status 401`, com o seguinte corpo:
-
-    ```js
-    {
-      "message": "Token inválido"
-    }
-    ```
-
 - O endpoint deve retornar o `status 201` e o crush que foi cadastrado, dá seguinte forma:
 
   ```js
@@ -420,6 +441,24 @@ O avaliador automático não necessariamente avalia seu projeto na ordem em que 
     }
   }
   ```
+  
+- A requisição deve ter o token de autenticação nos headers.
+
+  - Caso o token não seja encontrado retorne um código de `status 401`, com o seguinte corpo:
+
+    ```js
+    {
+      "message": "Token não encontrado"
+    }
+    ```
+
+  - Caso o token seja inválido retorne um código de `status 401`, com o seguinte corpo:
+
+    ```js
+    {
+      "message": "Token inválido"
+    }
+    ```
 
 - O campo `name` deverá ter no mínimo 3 caracteres. Ele é obrigatório.
 
@@ -489,24 +528,6 @@ O avaliador automático não necessariamente avalia seu projeto na ordem em que 
       }
       ```
 
-- A requisição deve ter o token de autenticação nos headers.
-
-  - Caso o token não seja encontrado retorne um código de `status 401`, com o seguinte corpo:
-
-    ```js
-    {
-      "message": "Token não encontrado"
-    }
-    ```
-
-  - Caso o token seja inválido retorne um código de `status 401`, com o seguinte corpo:
-
-    ```js
-    {
-      "message": "Token inválido"
-    }
-    ```
-
 - O endpoint deve retornar o `status 200` e o crush que foi editado, dá seguinte forma:
 
   ```js
@@ -525,12 +546,6 @@ O avaliador automático não necessariamente avalia seu projeto na ordem em que 
 
 #### Os seguintes pontos serão avaliados:
 
-- O endpoint deve deletar um crush baseado no id da rota. Devendo retornar o `status 200`, com o seguinte corpo:
-
-  ```js
-  { "message": "Crush deletado com sucesso!" }
-  ```
-
 - A requisição deve ter o token de autenticação nos headers.
 
   - Caso o token não seja encontrado retorne um código de `status 401`, com o seguinte corpo:
@@ -548,6 +563,13 @@ O avaliador automático não necessariamente avalia seu projeto na ordem em que 
       "message": "Token inválido"
     }
     ```
+
+- O endpoint deve deletar um crush baseado no id da rota. Devendo retornar o `status 200`, com o seguinte corpo:
+
+  ```js
+  { "message": "Crush deletado com sucesso" }
+  ```
+
 
 ### 7 - Crie o endpoint GET `/crush/search?q=searchTerm`
 
@@ -573,10 +595,6 @@ O avaliador automático não necessariamente avalia seu projeto na ordem em que 
   ];
   ```
 
-- Caso `searchTerm` não seja informado ou esteja vazio, o endpoint devera retornar um array com todos os crushs cadastrados, assim como no endpoint GET `/crush`, com um `status 200`.
-
-- Caso nenhum crush satisfaça a busca, o endpoint deve retornar o `status 200` e um array vazio.
-
 - A requisição deve ter o token de autenticação nos headers.
 
   - Caso o token não seja encontrado retorne um código de `status 401`, com o seguinte corpo:
@@ -595,10 +613,17 @@ O avaliador automático não necessariamente avalia seu projeto na ordem em que 
     }
     ```
 
+- Caso `searchTerm` não seja informado ou esteja vazio, o endpoint devera retornar um array com todos os crushs cadastrados, assim como no endpoint GET `/crush`, com um `status 200`.
+
+- Caso nenhum crush satisfaça a busca, o endpoint deve retornar o `status 200` e um array vazio.
+
+
 ---
 
-## Avaliando o projeto
+# Avisos finais
 
 Ao finalizar e submeter o projeto, não se esqueça de avaliar sua experiência preenchendo o formulário. Leva menos de 3 minutos!
 
-Link: [Formulário Avaliação Projeto](https://be-trybe.typeform.com/to/ZTeR4IbH#cohort_name=xxxxx)
+Link: [FORMULÁRIO DE AVALIAÇÃO DE PROJETO](https://be-trybe.typeform.com/to/ZTeR4IbH)
+
+O avaliador automático não necessariamente avalia seu projeto na ordem em que os requisitos aparecem no readme. Isso acontece para deixar o processo de avaliação mais rápido. Então, não se assuste se isso acontecer, ok?
