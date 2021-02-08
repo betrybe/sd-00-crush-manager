@@ -78,48 +78,4 @@ describe('1 - Crie o endpoint GET /crush', () => {
           });
       });
   });
-
-//   it('Será validado que não é possível obter todos os crushs sem estar autorizado', async () => {
-//     await frisby
-//       .post(`${url}/login`, {
-//         body: {
-//           email: 'deferiascomigo@gmail.com',
-//           password: '12345678',
-//         },
-//       })
-//       .then(() =>
-//         frisby
-//           .get(`${url}/crush`)
-//           .expect('status', 401)
-//           .then((responseGet) => {
-//             const { json } = responseGet;
-//             expect(json.message).toBe('Token não encontrado');
-//           }));
-//   });
-
-//   it('Será validado que não é possível obter todos os crushs com token inválido', async () => {
-//     await frisby
-//       .post(`${url}/login`, {
-//         body: {
-//           email: 'deferiascomigo@gmail.com',
-//           password: '12345678',
-//         },
-//       })
-//       .then(() =>
-//         frisby
-//           .setup({
-//             request: {
-//               headers: {
-//                 Authorization: '9999999',
-//                 'Content-Type': 'application/json',
-//               },
-//             },
-//           })
-//           .get(`${url}/crush`)
-//           .expect('status', 401)
-//           .then((responseGet) => {
-//             const { json } = responseGet;
-//             expect(json.message).toBe('Token inválido');
-//           }));
-//   });
 });
