@@ -42,7 +42,7 @@ app.get('/crush/search', authMiddleware, async (req, res) => {
     .json(crushList);
 });
 
-app.get(CRUSH_BY_ID, authMiddleware, async (req, res, next) => {
+app.get(CRUSH_BY_ID, async (req, res, next) => {
   const { params: { id } } = req;
   const crush = await getCrushById(id);
   try {
@@ -53,7 +53,7 @@ app.get(CRUSH_BY_ID, authMiddleware, async (req, res, next) => {
   }
 });
 
-app.get('/crush', authMiddleware, async (_req, res) => {
+app.get('/crush', async (_req, res) => {
   res.status(SUCCESS).json(await getCrushDB());
 });
 

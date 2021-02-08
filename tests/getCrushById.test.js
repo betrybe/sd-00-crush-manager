@@ -20,64 +20,26 @@ describe('2 - Crie o endpoint GET /crush/:id', () => {
 
   it('Será validado que o endpoint retorna um crush baseado no id da rota', async () => {
     await frisby
-      .post(`${url}/login`, {
-        body: {
-          email: 'deferiascomigo@gmail.com',
-          password: '12345678',
-        },
-      })
-      .then((responseLogin) => {
-        const { body } = responseLogin;
-        const result = JSON.parse(body);
-        return frisby
-          .setup({
-            request: {
-              headers: {
-                Authorization: result.token,
-                'Content-Type': 'application/json',
-              },
-            },
-          })
-          .get(`${url}/crush/1`)
-          .expect('status', 200)
-          .then((responseGet) => {
-            const { json } = responseGet;
-            expect(json).toEqual({
-              name: 'Madonna',
-              age: 62,
-              id: 1,
-              date: { datedAt: '23/10/2020', rate: 5 },
-            });
-          });
+      .get(`${url}/crush/1`)
+      .expect('status', 200)
+      .then((responseGet) => {
+        const { json } = responseGet;
+        expect(json).toEqual({
+          name: 'Madonna',
+          age: 62,
+          id: 1,
+          date: { datedAt: '23/10/2020', rate: 5 },
+        });
       });
   });
 
   it('Será validado que o endpoint retonar um erro caso nenhum crush seja encontrado', async () => {
     await frisby
-      .post(`${url}/login`, {
-        body: {
-          email: 'deferiascomigo@gmail.com',
-          password: '12345678',
-        },
-      })
-      .then((responseLogin) => {
-        const { body } = responseLogin;
-        const result = JSON.parse(body);
-        return frisby
-          .setup({
-            request: {
-              headers: {
-                Authorization: result.token,
-                'Content-Type': 'application/json',
-              },
-            },
-          })
-          .get(`${url}/crush/9`)
-          .expect('status', 404)
-          .then((responseGet) => {
-            const { json } = responseGet;
-            expect(json.message).toBe('Crush não encontrado');
-          });
+      .get(`${url}/crush/9`)
+      .expect('status', 404)
+      .then((responseGet) => {
+        const { json } = responseGet;
+        expect(json.message).toBe('Crush não encontrado');
       });
   });
 });

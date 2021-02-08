@@ -21,30 +21,11 @@ describe('1 - Crie o endpoint GET /crush', () => {
 
   it('Será validado que o endpoint retorna um array com todos os crushs cadastrados', async () => {
     await frisby
-      .post(`${url}/login`, {
-        body: {
-          email: 'deferiascomigo@gmail.com',
-          password: '12345678',
-        },
-      })
-      .then((responseLogin) => {
-        const { body } = responseLogin;
-        const result = JSON.parse(body);
-        return frisby
-          .setup({
-            request: {
-              headers: {
-                Authorization: result.token,
-                'Content-Type': 'application/json',
-              },
-            },
-          })
-          .get(`${url}/crush`)
-          .expect('status', 200)
-          .then((responseGet) => {
-            const { json } = responseGet;
-            expect(json).toEqual(crushsSeed);
-          });
+      .get(`${url}/crush`)
+      .expect('status', 200)
+      .then((responseGet) => {
+        const { json } = responseGet;
+        expect(json).toEqual(crushsSeed);
       });
   });
 
@@ -52,30 +33,11 @@ describe('1 - Crie o endpoint GET /crush', () => {
     fs.writeFileSync(path.join(__dirname, '..', 'crush.json'), '[]', 'utf8');
 
     await frisby
-      .post(`${url}/login`, {
-        body: {
-          email: 'deferiascomigo@gmail.com',
-          password: '12345678',
-        },
-      })
-      .then((responseLogin) => {
-        const { body } = responseLogin;
-        const result = JSON.parse(body);
-        return frisby
-          .setup({
-            request: {
-              headers: {
-                Authorization: result.token,
-                'Content-Type': 'application/json',
-              },
-            },
-          })
-          .get(`${url}/crush`)
-          .expect('status', 200)
-          .then((responseGet) => {
-            const { json } = responseGet;
-            expect(json).toEqual([]);
-          });
+      .get(`${url}/crush`)
+      .expect('status', 200)
+      .then((responseGet) => {
+        const { json } = responseGet;
+        expect(json).toEqual([]);
       });
   });
 });
