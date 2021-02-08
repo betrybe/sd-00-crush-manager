@@ -185,7 +185,7 @@ Você pode também instalar o plugin do `ESLint` no `VSCode`, bastar ir em exten
 
 1. Com excessão do requisito 3, todos os outros requisitos deverão ser feitos utilizando o módulo `fs`.
 
-2. O arquivo `crush.json` será utilizado como base para fazer as requisições da API.
+2. O arquivo `crush.json` será utilizado como base para fazer as requisições da API. Você precisará usar os métodos do módulo `fs` para ler ou escrever dados dos crushs de acordo com cada requisito. 
 ---
 
 
