@@ -2,7 +2,7 @@ const frisby = require('frisby');
 
 const url = 'http://localhost:3000';
 
-describe('1 - Crie o endpoint POST /login', () => {
+describe('3 - Crie o endpoint POST /login', () => {
   it('Será validado que o endpoint deve ser capaz de retornar um token aleatório de 16 caracteres', async () => {
     await frisby
       .post(`${url}/login`, {
@@ -80,7 +80,7 @@ describe('1 - Crie o endpoint POST /login', () => {
         const { body } = responseLogin;
         const result = JSON.parse(body);
         expect(result.message).toBe(
-          'A "senha" deve ter pelo menos 6 caracteres',
+          'O "password" deve ter pelo menos 6 caracteres',
         );
       });
   });
