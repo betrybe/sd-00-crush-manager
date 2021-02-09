@@ -1,19 +1,19 @@
 {
   "requirements": [
     {
-      "description": "1 - Crie o endpoint POST /login",
+      "description": "1 - Crie o endpoint GET /crush",
       "bonus": false
     },
     {
-      "description": "2 - Crie o endpoint POST /crush",
+      "description": "2 - Crie o endpoint GET /crush/:id",
       "bonus": false
     },
     {
-      "description": "3 - Crie o endpoint GET /crush",
+      "description": "3 - Crie o endpoint POST /login",
       "bonus": false
     },
     {
-      "description": "4 - Crie o endpoint GET /crush/:id",
+      "description": "4 - Crie o endpoint POST /crush",
       "bonus": false
     },
     {
