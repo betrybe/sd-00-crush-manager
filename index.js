@@ -23,14 +23,11 @@ const {
 const app = express();
 app.use(bodyParser.json());
 
-<<<<<<< HEAD
 const SUCCESS = 200;
 const REG_SUCCESS = 201;
 const CRUSH_BY_ID = '/crush/:id';
 const PORT = '3000';
 
-=======
->>>>>>> 8cd545d7e7e5594d522c5c68f9e4f0a97a9b1c28
 // não remova esse endpoint, e para o avaliador funcionar
 app.get('/', (request, response) => {
   response.send();
