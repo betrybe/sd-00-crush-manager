@@ -27,10 +27,10 @@ Aqui você vai encontrar os detalhes de como estruturar o desenvolvimento do seu
 - [Requisitos do projeto](#requisitos-do-projeto)
   - [Linter](#linter)
   - [Lista de requisitos](#lista-de-requisitos)
-    - [1 - Crie o endpoint POST /login](#1---crie-o-endpoint-post-login)
-    - [2 - Crie o endpoint POST /crush](#2---crie-o-endpoint-post-crush)
-    - [3 - Crie o endpoint GET /crush](#3---crie-o-endpoint-get-crush)
-    - [4 - Crie o endpoint GET /crush/:id](#4---crie-o-endpoint-get-crushid)
+    - [1 - Crie o endpoint GET /crush](#1---crie-o-endpoint-get-crush)
+    - [2 - Crie o endpoint GET /crush/:id](#2---crie-o-endpoint-get-crushid)
+    - [3 - Crie o endpoint POST /login](#3---crie-o-endpoint-post-login)
+    - [4 - Crie o endpoint POST /crush](#4---crie-o-endpoint-post-crush)
     - [5 - Crie o endpoint PUT /crush/:id](#5---crie-o-endpoint-put-crushid)
     - [6 - Crie o endpoint DELETE /crush/:id](#6---crie-o-endpoint-delete-crushid)
     - [7 - Crie o endpoint GET /crush/search?q=searchTerm](#7---crie-o-endpoint-get-crushsearchqsearchterm)
@@ -71,19 +71,19 @@ Você vai desenvolver uma API de um CRUD (**C**reate, **R**ead, **U**pdate e **D
 
 ### Data de Entrega
 
-O projeto tem até a seguinte data: `dd/mm/yyyy - 14:00h`. Para ser entregue a avaliação final.
+O projeto tem até a seguinte data: `23/02/2021 - 14:00h`. Para ser entregue a avaliação final.
 
 ---
 
 # Instruções para entregar seu projeto
 
-## Antes de começar a desenvolver
+## Antes de começar a desenvolver:
 
 1. Clone o repositório
 
-- `git clone https://github.com/betrybe/sd-0x-project-crush-manager.git`.
+- `git clone https://github.com/tryber/sd-06-crush-manager.git`.
 - Entre na pasta do repositório que você acabou de clonar:
-  - `cd sd-0x-project-crush-manager`
+  - `cd sd-06-crush-manager`
 
 2. Instale as dependências [**Caso existam**]
 
@@ -114,17 +114,17 @@ O projeto tem até a seguinte data: `dd/mm/yyyy - 14:00h`. Para ser entregue a a
 
 5. Adicione a sua branch com o novo `commit` ao repositório remoto
 
-- Usando o exemplo anterior: `git push -u origin joaozinho-sd-0x-project-crush-manager`
+- Usando o exemplo anterior: `git push -u origin joaozinho-sd-06-crush-manager`
 
 6. Crie um novo `Pull Request` _(PR)_
 
-- Vá até a página de _Pull Requests_ do [repositório no GitHub](https://github.com/tryber/sd-0x-project-crush-manager/pulls)
+- Vá até a página de _Pull Requests_ do [repositório no GitHub](https://github.com/tryber/sd-06-crush-manager/pulls)
 - Clique no botão verde _"New pull request"_
 - Clique na caixa de seleção _"Compare"_ e escolha a sua branch **com atenção**
 - Clique no botão verde _"Create pull request"_
 - Adicione uma descrição para o _Pull Request_ e clique no botão verde _"Create pull request"_
 - **Não se preocupe em preencher mais nada por enquanto!**
-- Volte até a [página de _Pull Requests_ do repositório](https://github.com/tryber/sd-0x-project-crush-manager/pulls) e confira que o seu _Pull Request_ está criado
+- Volte até a [página de _Pull Requests_ do repositório](https://github.com/tryber/sd-06-crush-manager/pulls) e confira que o seu _Pull Request_ está criado
 
 ## Durante o desenvolvimento
 
@@ -149,7 +149,7 @@ Para sinalizar que o seu projeto está pronto para o _"Code Review"_ dos seus co
 
   - No menu à direita, clique no _link_ **"Assignees"** e escolha **o seu usuário**;
 
-  - No menu à direita, clique no _link_ **"Reviewers"** e digite `students`, selecione o time `tryber/students-sd-0x`.
+  - No menu à direita, clique no _link_ **"Reviewers"** e digite `students`, selecione o time `tryber/students-sd-06`.
 
 Caso tenha alguma dúvida, [aqui tem um video explicativo](https://vimeo.com/362189205).
 
@@ -173,26 +173,96 @@ Usaremos o [ESLint](https://eslint.org/) para fazer a análise estática do seu 
 
 Este projeto já vem com as dependências relacionadas ao _linter_ configuradas nos arquivos `package.json`.
 
-Para poder rodar o `ESLint` em um projeto, basta executar o comando `npm install` dentro do projeto e depois `npm run lint`. Se a análise do `ESLint` encontrar problemas no seu código, tais problemas serão mostrados no seu terminal. Se não houver problema no seu código, nada será impresso no seu terminal.
-
-Você pode também instalar o plugin do `ESLint` no `VSCode`, bastar ir em extensions e baixar o [plugin `ESLint`](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint).
-
----
-
-# Requisitos do projeto
-
-### Linter
-
-Usaremos o [ESLint](https://eslint.org/) para fazer a análise estática do seu código.
-
-Este projeto já vem com as dependências relacionadas ao _linter_ configuradas nos arquivos `package.json`.
-
 Para poder rodar os `ESLint` em um projeto basta executar o comando `npm install` dentro do projeto e depois `npm run lint`. Se a análise do `ESLint` encontrar problemas no seu código, tais problemas serão mostrados no seu terminal. Se não houver problema no seu código, nada será impresso no seu terminal.
 
 Você pode também instalar o plugin do `ESLint` no `VSCode`, bastar ir em extensions e baixar o [plugin `ESLint`](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint).
 
 ---
+
 ## Lista de requisitos
+
+### Observações
+
+1. Com exceção do requisito 3, todos os outros requisitos deverão ser feitos utilizando o módulo `fs`.
+
+2. O arquivo `crush.json` será utilizado como base para fazer as requisições da API. As operações de leitura e escrita dos requisitos deve ser feito nesse arquivo usando os métodos da biblioteca `fs`. Esse arquivo deve ser mantido na raiz do projeto.
+
+3. Há um arquivo `index.js` no repositório. Não remova, nele, o seguinte trecho de código:
+
+```javascript
+app.get('/', (_request, response) => {
+  response.status(SUCCESS).send();
+});
+```
+Isso está configurado para o avaliador funcionar.
+<br> 
+
+4. Ao utilizar de testes locais com `npm run test`, o servidor deverá ser iniciado com `npm run debug` para evitar possíveis erros. 
+
+5. Caso os testes falhem seu arquivo `crush.json` não será restaurado, para isso utilize `npm run restore`. 
+
+6. Ao se deparar com o erro de que a porta já está em uso: `EADDRINUSE: address already in use 0.0.0.0:3000`, execute em seu terminal `killall node` isso finaliza todas as execuções do node. 
+
+---
+
+### 1 - Crie o endpoint GET `/crush`
+
+#### Os seguintes pontos serão avaliados:
+
+- O endpoint deve retornar um array com todos os crushs cadastrados. Devendo retornar o `status 200`, com o seguinte corpo:
+
+```js
+[
+  {
+    "name": "Madonna",
+    "age": 62,
+    "id": 1,
+    "date": { "datedAt": "23/10/2020", "rate": 5 }
+  },
+  {
+    "name": "Cyndi Lauper",
+    "age": 67,
+    "id": 2,
+    "date": { "datedAt": "23/10/2020", "rate": 5 }
+  },
+  {
+    "name": "Kendrick Lamar",
+    "age": 33,
+    "id": 3,
+    "date": { "datedAt": "23/10/2020", "rate": 5 }
+  },
+  {
+    "name": "Tom Holland",
+    "age": 24,
+    "id": 4,
+    "date": { "datedAt": "23/10/2020", "rate": 5 }
+  }
+]
+```
+
+- Caso não exista nenhum crush cadastrado o endpoint deve retornar um array vazio e o `status 200`.
+
+
+### 2 - Crie o endpoint GET `/crush/:id`
+
+- O endpoint deve retornar um crush baseado no id da rota. Devendo retornar o `status 200` ao fazer uma requisição `/crush/1`, com o seguinte corpo:
+
+  ```js
+  {
+    "name": "Madonna",
+    "age": 62,
+    "id": 1,
+    "date": { "datedAt": "23/10/2020", "rate": 5 }
+  }
+  ```
+
+- Caso não seja encontrado um crush baseado no id da rota, o endpoint deve retornar o `status 404` com o seguinte corpo:
+
+  ```js
+  {
+    "message": "Crush não encontrado"
+  }
+  ```
 
 ### 3 - Crie o endpoint POST `/login`
 
@@ -249,7 +319,7 @@ Você pode também instalar o plugin do `ESLint` no `VSCode`, bastar ir em exten
 
     ```js
     {
-      "message": "O \"password\" ter pelo menos 6 caracteres"
+      "message": "A \"senha\" deve ter pelo menos 6 caracteres"
     }
     ```
 
