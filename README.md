@@ -83,7 +83,7 @@ O projeto tem até a seguinte data: `dd/mm/yyyy - 14:00h`. Para ser entregue a a
 
 - `git clone https://github.com/betrybe/sd-0x-project-crush-manager.git`.
 - Entre na pasta do repositório que você acabou de clonar:
-  - `cd sd-0x-project-crush-manager`
+  - `cd sd-0x-crush-manager`
 
 2. Instale as dependências [**Caso existam**]
 
@@ -97,7 +97,7 @@ O projeto tem até a seguinte data: `dd/mm/yyyy - 14:00h`. Para ser entregue a a
   - Exemplo: `git checkout master`
 - Agora crie uma branch à qual você vai submeter os `commits` do seu projeto
   - Você deve criar uma branch no seguinte formato: `nome-de-usuario-nome-do-projeto`
-  - Exemplo: `git checkout -b joaozinho-sd-0x-project-crush-manager`
+  - Exemplo: `git checkout -b joaozinho-sd-0x-crush-manager`
 
 4. Adicione as mudanças ao _stage_ do Git e faça um `commit`
 
@@ -114,7 +114,7 @@ O projeto tem até a seguinte data: `dd/mm/yyyy - 14:00h`. Para ser entregue a a
 
 5. Adicione a sua branch com o novo `commit` ao repositório remoto
 
-- Usando o exemplo anterior: `git push -u origin joaozinho-sd-0x-project-crush-manager`
+- Usando o exemplo anterior: `git push -u origin joaozinho-sd-0x-crush-manager`
 
 6. Crie um novo `Pull Request` _(PR)_
 
@@ -196,6 +196,12 @@ app.get('/', (_request, response) => {
 ```
 
 Isso está configurado para o avaliador funcionar.
+
+4. Ao utilizar de testes locais com `npm run test`, o servidor deverá ser iniciado com `npm run debug` para evitar possíveis erros.
+
+5. Caso os testes falhem seu arquivo `crush.json` não será restaurado, para isso utilize `npm run restore`.
+
+6. Ao se deparar com o erro de que a porta já está em uso: `EADDRINUSE: address already in use 0.0.0.0:3000`, execute em seu terminal `killall node` isso finaliza todas as execuções do node.
 
 ---
 
