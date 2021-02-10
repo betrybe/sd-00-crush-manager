@@ -27,10 +27,10 @@ Aqui você vai encontrar os detalhes de como estruturar o desenvolvimento do seu
 - [Requisitos do projeto](#requisitos-do-projeto)
   - [Linter](#linter)
   - [Lista de requisitos](#lista-de-requisitos)
-    - [1 - Crie o endpoint POST /login](#1---crie-o-endpoint-post-login)
-    - [2 - Crie o endpoint POST /crush](#2---crie-o-endpoint-post-crush)
-    - [3 - Crie o endpoint GET /crush](#3---crie-o-endpoint-get-crush)
-    - [4 - Crie o endpoint GET /crush/:id](#4---crie-o-endpoint-get-crushid)
+    - [1 - Crie o endpoint GET /crush](#1---crie-o-endpoint-get-crush)
+    - [2 - Crie o endpoint GET /crush/:id](#2---crie-o-endpoint-get-crushid)
+    - [3 - Crie o endpoint POST /login](#3---crie-o-endpoint-post-login)
+    - [4 - Crie o endpoint POST /crush](#4---crie-o-endpoint-post-crush)
     - [5 - Crie o endpoint PUT /crush/:id](#5---crie-o-endpoint-put-crushid)
     - [6 - Crie o endpoint DELETE /crush/:id](#6---crie-o-endpoint-delete-crushid)
     - [7 - Crie o endpoint GET /crush/search?q=searchTerm](#7---crie-o-endpoint-get-crushsearchqsearchterm)
@@ -77,7 +77,7 @@ O projeto tem até a seguinte data: `dd/mm/yyyy - 14:00h`. Para ser entregue a a
 
 # Instruções para entregar seu projeto
 
-## Antes de começar a desenvolver
+## Antes de começar a desenvolver:
 
 1. Clone o repositório
 
@@ -173,26 +173,90 @@ Usaremos o [ESLint](https://eslint.org/) para fazer a análise estática do seu 
 
 Este projeto já vem com as dependências relacionadas ao _linter_ configuradas nos arquivos `package.json`.
 
-Para poder rodar o `ESLint` em um projeto, basta executar o comando `npm install` dentro do projeto e depois `npm run lint`. Se a análise do `ESLint` encontrar problemas no seu código, tais problemas serão mostrados no seu terminal. Se não houver problema no seu código, nada será impresso no seu terminal.
-
-Você pode também instalar o plugin do `ESLint` no `VSCode`, bastar ir em extensions e baixar o [plugin `ESLint`](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint).
-
----
-
-# Requisitos do projeto
-
-### Linter
-
-Usaremos o [ESLint](https://eslint.org/) para fazer a análise estática do seu código.
-
-Este projeto já vem com as dependências relacionadas ao _linter_ configuradas nos arquivos `package.json`.
-
 Para poder rodar os `ESLint` em um projeto basta executar o comando `npm install` dentro do projeto e depois `npm run lint`. Se a análise do `ESLint` encontrar problemas no seu código, tais problemas serão mostrados no seu terminal. Se não houver problema no seu código, nada será impresso no seu terminal.
 
 Você pode também instalar o plugin do `ESLint` no `VSCode`, bastar ir em extensions e baixar o [plugin `ESLint`](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint).
 
 ---
+
 ## Lista de requisitos
+
+### Observações
+
+1. Com exceção do requisito 3, todos os outros requisitos deverão ser feitos utilizando o módulo `fs`.
+
+2. O arquivo `crush.json` será utilizado como base para fazer as requisições da API. As operações de leitura e escrita dos requisitos deve ser feito nesse arquivo usando os métodos da biblioteca `fs`.
+
+3. Há um arquivo `index.js` no repositório. Não remova, nele, o seguinte trecho de código:
+
+```javascript
+app.get('/', (_request, response) => {
+  response.status(SUCCESS).send();
+});
+```
+
+Isso está configurado para o avaliador funcionar.
+
+---
+
+### 1 - Crie o endpoint GET `/crush`
+
+#### Os seguintes pontos serão avaliados:
+
+- O endpoint deve retornar um array com todos os crushs cadastrados. Devendo retornar o `status 200`, com o seguinte corpo:
+
+```js
+[
+  {
+    "name": "Madonna",
+    "age": 62,
+    "id": 1,
+    "date": { "datedAt": "23/10/2020", "rate": 5 }
+  },
+  {
+    "name": "Cyndi Lauper",
+    "age": 67,
+    "id": 2,
+    "date": { "datedAt": "23/10/2020", "rate": 5 }
+  },
+  {
+    "name": "Kendrick Lamar",
+    "age": 33,
+    "id": 3,
+    "date": { "datedAt": "23/10/2020", "rate": 5 }
+  },
+  {
+    "name": "Tom Holland",
+    "age": 24,
+    "id": 4,
+    "date": { "datedAt": "23/10/2020", "rate": 5 }
+  }
+]
+```
+
+- Caso não exista nenhum crush cadastrado o endpoint deve retornar um array vazio e o `status 200`.
+
+
+### 2 - Crie o endpoint GET `/crush/:id`
+
+- O endpoint deve retornar um crush baseado no id da rota. Devendo retornar o `status 200` ao fazer uma requisição `/crush/1`, com o seguinte corpo:
+
+  ```js
+  {
+    "name": "Madonna",
+    "age": 62,
+    "id": 1,
+    "date": { "datedAt": "23/10/2020", "rate": 5 }
+  }
+  ```
+
+- Caso não seja encontrado um crush baseado no id da rota, o endpoint deve retornar o `status 404` com o seguinte corpo:
+
+  ```js
+  {
+    "message": "Crush não encontrado"
+  }
+  ```
 
 ### 3 - Crie o endpoint POST `/login`
 

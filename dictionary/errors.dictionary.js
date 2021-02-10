@@ -3,7 +3,7 @@ module.exports = {
   INVALID_DATE_AT: 'O campo "datedAt" deve ter o formato "dd/mm/aaaa"',
   INVALID_EMAIL: 'O "email" deve ter o formato "email@email.com"',
   INVALID_NAME: 'O "name" deve ter pelo menos 3 caracteres',
-  INVALID_PASS: 'A "senha" deve ter pelo menos 6 caracteres',
+  INVALID_PASS: 'O "password" deve ter pelo menos 6 caracteres',
   INVALID_RATE: 'O campo "rate" deve ser um inteiro de 1 à 5',
   INVALID_TOKEN: 'Token inválido;401',
   NO_AGE: 'O campo "age" é obrigatório',
