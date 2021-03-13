@@ -197,7 +197,7 @@ app.get('/', (_request, response) => {
 
 Isso está configurado para o avaliador funcionar.
 
-4. Ao utilizar de testes locais com `npm run test`, o servidor deverá ser iniciado com `npm run debug` para evitar possíveis erros.
+4. Ao utilizar de testes locais com `npm run test`, o servidor deverá ser iniciado com `npm start` para evitar possíveis erros.
 
 5. Caso os testes falhem seu arquivo `crush.json` não será restaurado, para isso utilize `npm run restore`.
 

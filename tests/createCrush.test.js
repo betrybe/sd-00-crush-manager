@@ -24,7 +24,13 @@ describe('4 - Crie o endpoint POST /crush', () => {
       'utf8',
     );
   });
-
+afterAll(() =>{
+  fs.writeFileSync(
+    path.join(__dirname, '..', 'crush.json'),
+    crushSeed,
+    'utf8',
+  );
+})
   it('Será validado que é possível cadastrar um crush com sucesso', async () => {
     await frisby
       .post(`${url}/login`, {
@@ -52,6 +58,12 @@ describe('4 - Crie o endpoint POST /crush', () => {
           })
           .expect('status', 201)
           .then((responseCreate) => {
+            console.log(require('../crush.json'))
+            expect(require('../crush.json')).toEqual(
+              expect.arrayContaining(
+                [expect.objectContaining(postCrushMock)]
+                )
+              );
             const { json } = responseCreate;
             expect(json).toEqual(postCrushMock);
           });

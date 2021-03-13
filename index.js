@@ -26,7 +26,7 @@ app.use(bodyParser.json());
 const SUCCESS = 200;
 const REG_SUCCESS = 201;
 const CRUSH_BY_ID = '/crush/:id';
-const PORT = '3000';
+const PORT = 3000;
 
 // não remova esse endpoint, e para o avaliador funcionar
 app.get('/', (_request, response) => {

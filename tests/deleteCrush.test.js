@@ -17,7 +17,13 @@ describe('6 - Crie o endpoint DELETE /crush/:id', () => {
       'utf8',
     );
   });
-
+  afterAll(() =>{
+    fs.writeFileSync(
+      path.join(__dirname, '..', 'crush.json'),
+      crushSeed,
+      'utf8',
+    );
+  })
   it('Será validado que é possível deletar um crush com sucesso', async () => {
     let resultCrush;
 
@@ -75,6 +81,11 @@ describe('6 - Crie o endpoint DELETE /crush/:id', () => {
           .delete(`${url}/crush/${resultCrush.id}`)
           .expect('status', 200)
           .then((responseDelete) => {
+            expect(require('../crush.json')).not.toEqual(
+              expect.arrayContaining(
+                [expect.objectContaining({ id: resultCrush.id})]
+                )
+              );
             const { json } = responseDelete;
             expect(json.message).toBe('Crush deletado com sucesso');
           });

@@ -82,6 +82,19 @@ describe('5 - Crie o endpoint PUT /crush/:id', () => {
           })
           .expect('status', 200)
           .then((responseUpdate) => {
+            expect(require('../crush.json')).toEqual(
+              expect.arrayContaining(
+                [expect.objectContaining({
+                  id: resultCrush.id,
+                  name: 'Zendaya',
+                  age: 25,
+                  date: {
+                    datedAt: '24/10/2020',
+                    rate: 4,
+                  }
+                })]
+              )
+            );
             const { json } = responseUpdate;
             expect(json.id).toBe(resultCrush.id);
             expect(json.name).toBe('Zendaya');
